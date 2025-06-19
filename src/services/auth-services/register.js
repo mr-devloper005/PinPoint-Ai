@@ -4,7 +4,6 @@ export const registerUser = async (name, email, password) => {
   try {
     console.log("hello");
     const response = await axios.post(
-      "http://localhost:8000/api/auth/",
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/registeruser`,
       {
         name,
