@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getMessages = async (chatId) => {
   const res = await axios.get(
-    `http://localhost:8000/api/chat/getChatMessages/${chatId}`,
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/chat/getChatMessages/${chatId}`,
     { withCredentials: true }
   );
   return res.data;

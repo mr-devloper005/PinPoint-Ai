@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getChatTitle = async (content, chatId) => {
   const res = await axios.post(
-    "http://localhost:8000/api/chat/getChatTitle",
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/chat/getChatTitle`,
     {
       content,
       chatId,

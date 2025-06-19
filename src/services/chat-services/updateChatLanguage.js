@@ -3,7 +3,7 @@ import axios from "axios";
 export const updateChatLanguage = async (chatId, language) => {
   try {
     const response = await axios.put(
-      `http://localhost:8000/api/chat/updateLanguage`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/chat/updateLanguage`,
       {
         chatId: chatId,
         language: language,

@@ -3,7 +3,7 @@ import axios from "axios";
 export const loginUser = async (email, password) => {
   try {
     const response = await axios.post(
-      "http://localhost:8000/api/auth/loginuser",
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/loginuser`,
       {
         email,
         password,

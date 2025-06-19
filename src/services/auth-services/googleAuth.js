@@ -5,7 +5,7 @@ export const googleAuth = async (response) => {
 
   try {
     const res = await axios.post(
-      "http://localhost:8000/api/auth/googleauth",
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/googleauth`,
       {
         token: idToken,
       },

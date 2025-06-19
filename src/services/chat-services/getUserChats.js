@@ -3,7 +3,7 @@ import axios from "axios";
 export const getUserChats = async () => {
   try {
     const response = await axios.get(
-      "http://localhost:8000/api/chat/getUserChats",
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/chat/getUserChats`,
       {
         withCredentials: true,
       }

@@ -1,9 +1,12 @@
 import axios from "axios";
 
 export const createChat = async () => {
-  const res = await axios.get("http://localhost:8000/api/chat/create", {
-    withCredentials: true,
-  });
+  const res = await axios.get(
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/chat/create`,
+    {
+      withCredentials: true,
+    }
+  );
 
   const chatId = res.data.chat._id;
 
@@ -11,3 +14,5 @@ export const createChat = async () => {
 
   return chatId;
 };
+
+`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/googleauth`;
