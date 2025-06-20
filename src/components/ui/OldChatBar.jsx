@@ -23,9 +23,17 @@ const userChats = useSelector(state => state.chat.userChats)
 const [searchQuery, setSearchQuery] = useState('');
 
 
-const filteredChats = userChats.filter(chat =>
-  chat.title?.toLowerCase().includes(searchQuery.toLowerCase())
-);
+// const filteredChats = userChats?.filter(chat =>
+//   chat.title?.toLowerCase().includes(searchQuery.toLowerCase())
+// );
+
+const filteredChats = Array.isArray(userChats)
+  ? userChats.filter(chat =>
+      (chat.title || "")
+        .toLowerCase()
+        .includes((searchQuery || "").toLowerCase())
+    )
+  : [];
 
   const getThisChatMessages = (chatId)=>{
     dispatch(setChatId(chatId))
