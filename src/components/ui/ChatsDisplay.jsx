@@ -17,8 +17,8 @@ import { useRouter } from "next/navigation";
 
 function ChatsDisplay() {
   const loading = useSelector(state => state.chat.loading);
-  const messages = useSelector((state) => state.chat.messages);
-  const chatId = useSelector((state) => state.chat.chatId);
+  const messages = useSelector((state) => state.chat.messages) || []
+  const chatId = useSelector((state) => state.chat.chatId) || ""
   const scrollRef = useRef(null);
   const dispatch = useDispatch();
 

@@ -109,9 +109,9 @@ function ChatBar() {
   const textareaRef = useRef(null);
   const recognitionRef = useRef(null);
   const dispatch = useDispatch();
-  const chatId = useSelector((state) => state.chat.chatId);
+  const chatId = useSelector((state) => state.chat.chatId) || ""
   const [isListening, setIsListening] = useState("")
-  const allMessages = useSelector((state) => state.chat.messages);
+  // const allMessages = useSelector((state) => state.chat.messages) || []
 
 
 
