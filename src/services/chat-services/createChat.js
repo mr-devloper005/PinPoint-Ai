@@ -14,5 +14,3 @@ export const createChat = async () => {
 
   return chatId;
 };
-
-`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/googleauth`;
