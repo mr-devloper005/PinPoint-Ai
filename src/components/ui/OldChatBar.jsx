@@ -18,7 +18,7 @@ function OldChatBar() {
   
 const [isVisible, setIsVisible] = useState(true);
 const dispatch  =  useDispatch()
-const isLoading = useSelector(state => state.chat.getChatLoading ) || []
+const isLoading = useSelector(state => state.chat.getChatLoading )
 const userChats = useSelector(state => state.chat.userChats) || []
 const [searchQuery, setSearchQuery] = useState('');
 

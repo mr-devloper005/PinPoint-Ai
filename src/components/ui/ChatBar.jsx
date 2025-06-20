@@ -182,8 +182,8 @@ function ChatBar() {
     >
       <textarea onKeyDown={(e) => {
     if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault(); // prevent new line
-      sendPrompt(); // your function to send message
+      e.preventDefault(); 
+      sendPrompt(); 
     }
   }}
         ref={textareaRef}

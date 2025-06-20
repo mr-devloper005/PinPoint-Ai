@@ -52,7 +52,7 @@ function ChatsDisplay() {
     <div className="flex-1  w-full md:w-5/6 overflow-y-auto px-4  justify-center bg-neutral-950">
   <div className="max-w-3xl mb-44 mt-28 mx-auto flex flex-col gap-6">
 
-      {!loading && messages.length === 0 && (
+      {!loading && messages?.length === 0 && (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
