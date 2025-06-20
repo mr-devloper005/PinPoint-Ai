@@ -19,7 +19,7 @@ function OldChatBar() {
 const [isVisible, setIsVisible] = useState(true);
 const dispatch  =  useDispatch()
 const isLoading = useSelector(state => state.chat.getChatLoading )
-const userChats = useSelector(state => state.chat.userChats)
+const userChats = useSelector(state => state.chat.userChats) || []
 const [searchQuery, setSearchQuery] = useState('');
 
 
@@ -27,13 +27,10 @@ const [searchQuery, setSearchQuery] = useState('');
 //   chat.title?.toLowerCase().includes(searchQuery.toLowerCase())
 // );
 
-const filteredChats = Array.isArray(userChats)
-  ? userChats.filter(chat =>
-      (chat.title || "")
-        .toLowerCase()
-        .includes((searchQuery || "").toLowerCase())
-    )
-  : [];
+const filteredChats = (userChats || []).filter(chat =>
+  chat?.title?.toLowerCase().includes(searchQuery.toLowerCase())
+);
+
 
   const getThisChatMessages = (chatId)=>{
     dispatch(setChatId(chatId))
