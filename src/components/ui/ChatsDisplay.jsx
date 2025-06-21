@@ -65,7 +65,7 @@ function ChatsDisplay() {
       <p className="mt-4 text-lg text-gray-400">Start a conversation to begin your journey.</p>
     </motion.div>
   )}
-{/* 
+
 
     {messages?.map((message, index) => {
       const isUser = message.sender === "user";
@@ -162,8 +162,8 @@ function ChatsDisplay() {
           </div>
         </div>
       );
-    })} */}
-
+    })}
+{/* 
     {messages?.map((message, index) => {
   const isUser = message.sender === "user";
 
@@ -259,7 +259,7 @@ function ChatsDisplay() {
       </div>
     </div>
   );
-})}
+})} */}
 
 
     {loading && <ChatLoding />}
