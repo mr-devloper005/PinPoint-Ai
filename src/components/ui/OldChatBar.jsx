@@ -89,12 +89,12 @@ const filteredChats = (userChats || []).filter(chat =>
             />
             <ToggleSidebar toggle={() => setIsVisible(false)} />
           </div>
+          <div className='flex px-4'><CreateChat/>  </div>
 
-          <div className="px-4">
+          <div className="px-4 mt-3">
             <ChatsSearch searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
           </div>
 
-          <div className='flex px-4'><CreateChat/>  </div>
 
           <div className="flex-1 overflow-auto px-4 mt-4 custom-scrollbar pb-4">
             {isLoading && <SkeletonUi></SkeletonUi>}

@@ -30,7 +30,7 @@ function RegisterForm() {
     <>  
 
     {isLoading && <AuthLoading></AuthLoading>}
-    <div className="h-full   w-full bg-gray-950  flex justify-center items-center font-bold">
+    <div className="h-full   w-full bg-neutral-950  flex justify-center items-center font-bold">
       <div className="h-3/4  w-1/4  flex items-center justify-around flex-col text-white min-w-lg">
         <Heading heading={"Register"} />
         <form
@@ -84,19 +84,19 @@ function RegisterForm() {
 
           <button
             type="submit"
-            className="pl-4 min-h-14 w-3/4 border-2 text-2xl  cursor-pointer active:scale-95 rounded-xl bg-emerald-500 text-black">
+            className="pl-4 min-h-14 w-3/4 border-2 text-2xl  cursor-pointer active:scale-95 rounded-xl bg-neutral-500 text-black">
             Register
           </button>
+
+          <div className="flex min-h-14 w-3/4 gap-6 justify-around p-3 items-center">  
           <CustomGoogleLogin text={" Google "}/>
 
-          <p className="font-serif text-xl text-stone-600">
-            Already have an account?
-          </p>
+        or
           <Link
             href="/login"
-            className=" cursor-pointer text-2xl active:scale-95 flex items-center justify-center pl-4 min-h-14 w-3/4 border-2 rounded-xl bg-orange-800 text-black">
-            Login
-          </Link>
+            className=" cursor-pointer w-1/3 h-full bg-stone-600 rounded-lg flex items-center justify-center p-3  text-white">
+            login
+          </Link></div>
         </form>
       </div>
     </div></>

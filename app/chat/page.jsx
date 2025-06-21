@@ -22,16 +22,31 @@
 import ChatBar from '@/components/ui/ChatBar'
 import ChatsDisplay from '@/components/ui/ChatsDisplay'
 import OldChatBar from '@/components/ui/OldChatBar'
-import React, { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 
 function Page() {
   const [sidebarVisible, setSidebarVisible] = useState(true);
+
+    const router = useRouter();
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.push("/login");
+    }
+  }, [isAuthenticated]);
+
+  if (!isAuthenticated) {
+    return null; 
+  }
 
   return (
     <div className='min-w-screen min-h-screen bg-neutral-950 flex relative'>
       <OldChatBar isVisible={sidebarVisible} setIsVisible={setSidebarVisible} />
       <main className={`flex-1 overflow-x-hidden transition-all duration-300 ${sidebarVisible ? 'ml-0 md:ml-[25%]' : ''}`}>
-        {/* <h1 className=' absolute top-3 pl-36 w-full md:w-2/3 h-20 flex justify-center md:pl-20 items-center font-bold text-3xl  text-white text-center'>PinPoint Ai</h1> */}
+
         <ChatBar />
         <ChatsDisplay />
       </main>

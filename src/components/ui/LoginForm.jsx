@@ -70,19 +70,19 @@ function LoginForm() {
 
           <button
             type="submit"
-            className="pl-4 min-h-14 w-3/4 border-2 text-2xl  cursor-pointer active:scale-95 rounded-xl bg-green-500 text-black">
+            className="pl-4 min-h-14 w-3/4 border-2 text-2xl  cursor-pointer active:scale-95 rounded-xl bg-zinc-500 text-black">
             Login
           </button>
-          <CustomGoogleLogin text={"Google Login"} />
+          
+          <div className="flex min-h-14 w-3/4 gap-6 justify-around p-3 items-center">  
+          <CustomGoogleLogin text={" Google "}/>
 
-          <p className="font-serif text-xl text-stone-600">
-            Don't have an account?
-          </p>
+        or
           <Link
             href="/register"
-            className=" cursor-pointer text-2xl active:scale-95 flex items-center justify-center pl-4 min-h-14 w-3/4 border-2 rounded-xl bg-blue-700 text-black">
-            Register
-          </Link>
+            className=" cursor-pointer w-1/3 h-full p-3 bg-gray-600 rounded-lg flex items-center justify-center   text-white">
+           Register
+          </Link></div>
         </form>
       </div>
     </div></>
