@@ -170,7 +170,7 @@ function ChatsDisplay() {
   return (
     <div
       key={index}
-      className={`flex flex-col gap-2 ${isUser ? "items-end" : "items-start"}`}
+      className={`flex flex-col mb-20 gap-2 ${isUser ? "items-end" : "items-start"}`}
     >
       <div
         className={`max-w-[95%] w-fit px-6 py-4 rounded-2xl relative group shadow-xl transition-all duration-300 
