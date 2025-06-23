@@ -10,10 +10,8 @@ import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
 import { FiCopy } from "react-icons/fi";
-import toast from "react-hot-toast";
 import ChatLoding from "../smallComp/loaders/ChatLoding";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
 
 function ChatsDisplay() {
   const loading = useSelector(state => state.chat.loading);
@@ -22,18 +20,6 @@ function ChatsDisplay() {
   const scrollRef = useRef(null);
   const dispatch = useDispatch();
 
-  const router = useRouter();
-  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-
-  // useEffect(() => {
-  //   if (!isAuthenticated) {
-  //     router.push("/login");
-  //   }
-  // }, [isAuthenticated]);
-
-  // if (!isAuthenticated) {
-  //   return null; 
-  // }
 
   useEffect(() => {
     if (chatId) {
@@ -172,8 +158,7 @@ function ChatsDisplay() {
       key={index}
       className={`flex flex-col mb-20 gap-2 ${isUser ? "items-end" : "items-start"}`}
     >
-      <div
-        className={`max-w-[95%] w-fit px-6 py-4 rounded-2xl relative group shadow-xl transition-all duration-300 
+      <div className={`max-w-[95%] w-fit px-6 py-4 rounded-2xl relative group shadow-xl transition-all duration-300 
         ${isUser 
           ? "bg-gradient-to-br from-neutral-800 to-neutral-900 text-white text-center font-semibold tracking-wide"
           : "bg-neutral-900 text-gray-100"
