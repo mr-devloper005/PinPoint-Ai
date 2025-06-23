@@ -52,7 +52,7 @@ function ChatsDisplay() {
     </motion.div>
   )}
 
-{/* 
+
     {messages?.map((message, index) => {
       const isUser = message.sender === "user";
 
@@ -148,8 +148,8 @@ function ChatsDisplay() {
           </div>
         </div>
       );
-    })} */}
-
+    })}
+{/* 
     {messages?.map((message, index) => {
   const isUser = message.sender === "user";
 
@@ -244,7 +244,7 @@ function ChatsDisplay() {
       </div>
     </div>
   );
-})}
+})} */}
 
 
     {loading && <ChatLoding />}

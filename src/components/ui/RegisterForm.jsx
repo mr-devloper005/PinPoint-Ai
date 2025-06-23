@@ -88,7 +88,7 @@ function RegisterForm() {
             Register
           </button>
 
-          <div className="flex min-h-14 w-3/4 lg:w-full gap-6 justify-around p-3 items-center">  
+          <div className="flex flex-col md:flex-row min-h-14 w-3/4 lg:w-full gap-6 justify-around p-3 items-center">  
           <CustomGoogleLogin text={" Google "}/>
 
         or

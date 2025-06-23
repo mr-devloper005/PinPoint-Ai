@@ -74,7 +74,7 @@ function LoginForm() {
             Login
           </button>
           
-          <div className="flex min-h-14 w-3/4 lg:w-full gap-6 justify-around p-3 items-center">  
+          <div className="flex min-h-14 flex-col md:flex-row w-3/4 lg:w-full gap-6 justify-around p-3 items-center">  
           <CustomGoogleLogin text={" Google "}/>
 
         or
