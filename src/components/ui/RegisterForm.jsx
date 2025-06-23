@@ -45,7 +45,7 @@ function RegisterForm() {
               required: "* Name is Required",
             
             })}
-            className="pl-4 min-h-14 w-3/4 border-2 rounded-xl"
+            className="pl-4 min-h-14 w-3/4 lg:w-full border-2 rounded-xl"
             placeholder="Name"
           />
           {errors.email && (
@@ -60,7 +60,7 @@ function RegisterForm() {
                 message: "Enter a valid email address",
               },
             })}
-            className="pl-4 min-h-14 w-3/4 border-2 rounded-xl"
+            className="pl-4 min-h-14 w-3/4 lg:w-full border-2 rounded-xl"
             placeholder="Email"
           />
 
@@ -78,17 +78,17 @@ function RegisterForm() {
 
             })}
             autoComplete="current-password"
-            className="pl-4 min-h-14 w-3/4 border-2 rounded-xl"
+            className="pl-4 min-h-14 w-3/4 lg:w-full border-2 rounded-xl"
             placeholder="Password"
           />
 
           <button
             type="submit"
-            className="pl-4 min-h-14 w-3/4 border-2 text-2xl  cursor-pointer active:scale-95 rounded-xl bg-neutral-500 text-black">
+            className="pl-4 min-h-14 w-3/4 lg:w-full border-2 text-2xl  cursor-pointer active:scale-95 rounded-xl bg-neutral-500 text-black">
             Register
           </button>
 
-          <div className="flex min-h-14 w-3/4 gap-6 justify-around p-3 items-center">  
+          <div className="flex min-h-14 w-3/4 lg:w-full gap-6 justify-around p-3 items-center">  
           <CustomGoogleLogin text={" Google "}/>
 
         or

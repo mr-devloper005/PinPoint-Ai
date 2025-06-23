@@ -51,7 +51,7 @@ function LoginForm() {
                 message: "Enter a valid email address",
               },
             })}
-            className="pl-4 min-h-14 w-3/4 border-2 rounded-xl"
+            className="pl-4 min-h-14 w-3/4 lg:w-full border-2 rounded-xl"
             placeholder="Email"
           />
 
@@ -64,17 +64,17 @@ function LoginForm() {
               required: "Password is required",
             })}
             autocomplete="current-password"
-            className="pl-4 min-h-14 w-3/4 border-2 rounded-xl"
+            className="pl-4 min-h-14 w-3/4 lg:w-full border-2 rounded-xl"
             placeholder="Password"
           />
 
           <button
             type="submit"
-            className="pl-4 min-h-14 w-3/4 border-2 text-2xl  cursor-pointer active:scale-95 rounded-xl bg-zinc-500 text-black">
+            className="pl-4 min-h-14 w-3/4 lg:w-full border-2 text-2xl  cursor-pointer active:scale-95 rounded-xl bg-zinc-500 text-black">
             Login
           </button>
           
-          <div className="flex min-h-14 w-3/4 gap-6 justify-around p-3 items-center">  
+          <div className="flex min-h-14 w-3/4 lg:w-full gap-6 justify-around p-3 items-center">  
           <CustomGoogleLogin text={" Google "}/>
 
         or
