@@ -246,7 +246,7 @@ function ChatsDisplay() {
   );
 })} */}
 
-
+{/* 
 {messages?.map((message, index) => {
   const isUser = message.sender === "user";
 
@@ -259,6 +259,104 @@ function ChatsDisplay() {
         className={`w-fit max-w-[100%] sm:max-w-[95%] p-3 rounded-2xl relative group shadow-lg transition-all duration-300 ${
           isUser
             ? "bg-blue-600 text-white rounded-br-none"
+            : "bg-neutral-800 text-gray-100"
+        }`}
+      >
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          rehypePlugins={[rehypeHighlight]}
+          components={{
+            h1: ({ node, ...props }) => (
+              <h1 className="text-2xl sm:text-3xl font-bold text-gray-100 mb-4 mt-6">
+                {props.children}
+              </h1>
+            ),
+            h2: ({ node, ...props }) => (
+              <h2 className="text-xl sm:text-2xl font-semibold text-gray-200 mb-3 mt-5">
+                {props.children}
+              </h2>
+            ),
+            p: ({ node, ...props }) => (
+              <p className="text-base sm:text-lg text-gray-100 mb-4">
+                {props.children}
+              </p>
+            ),
+            a: ({ href, ...props }) => (
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-400 underline hover:text-sky-300"
+              >
+                {props.children}
+              </a>
+            ),
+            strong: ({ node, ...props }) => (
+              <strong className="font-semibold text-white">
+                {props.children}
+              </strong>
+            ),
+            ul: ({ node, ...props }) => (
+              <ul className="list-disc pl-6 text-gray-100 space-y-2 mb-4">
+                {props.children}
+              </ul>
+            ),
+            ol: ({ node, ...props }) => (
+              <ol className="list-decimal pl-6 text-gray-100 space-y-2 mb-4">
+                {props.children}
+              </ol>
+            ),
+            li: ({ node, ...props }) => (
+              <li className="leading-relaxed">{props.children}</li>
+            ),
+            code: ({ inline, children, ...props }) =>
+              inline ? (
+                <code className="bg-neutral-800 text-green-300 px-2 py-1 rounded text-base font-mono">
+                  {children}
+                </code>
+              ) : (
+                <pre className="bg-neutral-900 border border-neutral-700 rounded-lg p-5 overflow-x-auto text-green-300 text-base font-mono mt-4 mb-4">
+                  <code>{children}</code>
+                </pre>
+              ),
+            blockquote: ({ node, ...props }) => (
+              <blockquote className="border-l-4 border-gray-600 pl-4 italic text-gray-300 my-4">
+                {props.children}
+              </blockquote>
+            ),
+            hr: () => (
+              <hr className="my-6 border-t border-neutral-700 opacity-40" />
+            ),
+          }}
+        >
+          {message.content}
+        </ReactMarkdown>
+
+        <button
+          onClick={() => navigator.clipboard.writeText(message.content)}
+          className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-white/10 hover:bg-white/20 p-2 rounded-lg text-white"
+          title="Copy"
+        >
+          <FiCopy size={16} />
+        </button>
+      </div>
+    </div>
+  );
+})} */}
+
+
+{messages?.map((message, index) => {
+  const isUser = message.sender === "user";
+
+  return (
+    <div
+      key={index}
+      className={`flex ${isUser ? "justify-end" : "justify-start"} w-full`}
+    >
+      <div
+        className={`max-w-[90%] sm:max-w-[75%] p-3 rounded-2xl relative group shadow-md transition-all duration-300 break-words ${
+          isUser
+            ? "bg-neutral-700 text-white rounded-br-none"
             : "bg-neutral-800 text-gray-100"
         }`}
       >
