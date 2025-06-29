@@ -45,6 +45,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="overflow-x-hidden">
       <head>
+        <meta
+          name="google-site-verification"
+          content="VZMKmq_jzjHXiGWuhvKy0QPI7j6T1KPwuAmf0g211Qg"
+        />
         <script
           src="https://accounts.google.com/gsi/client"
           async
