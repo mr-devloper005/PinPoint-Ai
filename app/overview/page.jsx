@@ -3,9 +3,13 @@
 import { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRouter } from 'next/navigation';
+import { useDispatch } from 'react-redux';
+import { getCurrentUserThunk } from '@/slices/auth/authSlice';
 
 
 function useCountUp(end, duration = 1.5) {
+
+
   const [value, setValue] = useState(0);
   useEffect(() => {
     let start = 0;
@@ -25,6 +29,25 @@ function useCountUp(end, duration = 1.5) {
 }
 
 export default function Overview() {
+
+
+
+
+  const router = useRouter()
+  const dispatch = useDispatch()
+
+useEffect(() => {
+  dispatch(getCurrentUserThunk())
+    .unwrap()
+    .then(() => {
+     router.push("/chat");
+    })  .catch((err) => {
+      console.log("🔥 Thunk failed in overview", err);
+    })
+   
+}, []);
+
+
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 300], [0, -100]);
   const y2 = useTransform(scrollY, [0, 300], [0, -200]);

@@ -7,11 +7,11 @@ import ToggleSidebar from '../smallComp/ToggleSidebar';
 import ChatsSearch from '../smallComp/ChatsSearch';
 import { motion, AnimatePresence } from "framer-motion";
 import {useDispatch, useSelector} from 'react-redux';
-import {createChat} from '@/services/chat-services/createChat';
 import {getUserChatsThunk, setChatId} from '@/slices/chat/chatSlice';
 import SkeletonUi from '../smallComp/loaders/SkeletonUi';
 import ToolBar from '../smallComp/ToolBar';
 import CreateChat from '../smallComp/CreateChat';
+import Logout from '../smallComp/Logout';
 
 function OldChatBar() {
 
@@ -22,10 +22,6 @@ const isLoading = useSelector(state => state.chat.getChatLoading )
 const userChats = useSelector(state => state.chat.userChats) || []
 const [searchQuery, setSearchQuery] = useState('');
 
-
-// const filteredChats = userChats?.filter(chat =>
-//   chat.title?.toLowerCase().includes(searchQuery.toLowerCase())
-// );
 
 const filteredChats = (userChats || []).filter(chat =>
   chat?.title?.toLowerCase().includes(searchQuery.toLowerCase())
@@ -109,6 +105,7 @@ const filteredChats = (userChats || []).filter(chat =>
           </div>
 
           <ToolBar/>
+          
         </motion.div>
         
       )}

@@ -29,7 +29,7 @@ import { useSelector } from 'react-redux'
 function Page() {
   const [sidebarVisible, setSidebarVisible] = useState(true);
 
-    const router = useRouter();
+  const router = useRouter();
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ function Page() {
   }, [isAuthenticated]);
 
   if (!isAuthenticated) {
-    return null; 
+    return null;
   }
 
   return (

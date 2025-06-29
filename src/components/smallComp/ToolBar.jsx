@@ -135,6 +135,7 @@ import { cn } from "@/lib/utils";
 import { useDispatch, useSelector } from "react-redux";
 import { updateLanguageThunk } from "@/slices/chat/chatSlice";
 import toast from "react-hot-toast";
+import Logout from "./Logout";
 
 const languages = [
   { label: "English", value: "en" },
@@ -216,7 +217,8 @@ function ToolBar() {
         <div>
           <p className="mb-2 text-white">Select Language</p>
           <Combobox selectedValue={value3} onChange={handleLanguageChange} />
-        </div>
+        
+        </div>  <Logout/>
       </div>
     </div>
   );

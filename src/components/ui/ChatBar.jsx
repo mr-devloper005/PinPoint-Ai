@@ -177,7 +177,7 @@ function ChatBar() {
 
   return (
     <div
-      className="flex justify-center  items-center w-[95%] m-3 md:w-2/4 fixed bottom-2 z-10 min-w-96 md:left-[30%] max-h-60 overflow-auto rounded-4xl p-4"
+      className="flex justify-center  items-center w-[95%] m-3 md:w-2/4 fixed bottom-2 z-10 min-w-96 md:left-[32%] max-h-60 overflow-auto rounded-4xl p-4"
       style={{ backgroundColor: '#303030' }}
     >
       <textarea onKeyDown={(e) => {

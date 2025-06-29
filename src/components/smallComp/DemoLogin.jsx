@@ -192,6 +192,7 @@ import toast from "react-hot-toast";
 import { googleAuthThunk } from "@/slices/auth/authSlice";
 import { useDispatch } from "react-redux";
 import AuthLoading from "./loaders/AuthLoading";
+import Script from "next/script";
 
 export default function CustomGoogleLogin() {
 
@@ -225,6 +226,11 @@ dispatch(googleAuthThunk({response,toast,router}))
   return (
     <>  
     {isLoading && <AuthLoading/>}
+    
+<Script
+  src="https://accounts.google.com/gsi/client"
+  strategy="afterInteractive"
+/>
     <div className="flex justify-center">
       <div id="google-signin-button" className="custom-google-button" />
     </div></>

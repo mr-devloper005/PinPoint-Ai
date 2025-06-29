@@ -2,6 +2,7 @@ import { googleAuth } from "@/services/auth-services/googleAuth";
 import { loginUser } from "@/services/auth-services/login";
 import { registerUser } from "@/services/auth-services/register";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const initialState = {
   userName: "",
@@ -80,6 +81,46 @@ export const googleAuthThunk = createAsyncThunk(
   }
 );
 
+export const getCurrentUserThunk = createAsyncThunk(
+  "auth/getCurrentUser",
+  async (_, { rejectWithValue }) => {
+    try {
+      const res = await axios.get(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/isLoggedIn`,
+        {
+          withCredentials: true,
+        }
+      );
+      return res.data.user;
+    } catch (err) {
+      console.error("🔥 THUNK ERROR:", err?.response?.data || err.message);
+      return rejectWithValue(
+        err?.response?.data?.message || "Something went wrong"
+      );
+    }
+  }
+);
+
+export const logoutThunk = createAsyncThunk(
+  "auth/logout",
+  async ({ toast, router }) => {
+    try {
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/logout`
+      );
+
+      router.push("/login");
+      toast.success("Logout Successfully", {
+        position: "top-center",
+      });
+
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
 const authSlice = createSlice({
   name: "auth",
   initialState,
@@ -122,6 +163,15 @@ const authSlice = createSlice({
       })
       .addCase(googleAuthThunk.rejected, (state) => {
         state.isLoading = false;
+      })
+      .addCase(getCurrentUserThunk.fulfilled, (state, action) => {
+        state.userName = action.payload.name;
+        state.isAuthenticated = true;
+        console.log(action.payload.name);
+      })
+      .addCase(getCurrentUserThunk.rejected, (state) => {
+        state.userName = "";
+        state.isAuthenticated = false;
       });
   },
 });
