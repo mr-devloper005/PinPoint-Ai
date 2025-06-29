@@ -14,33 +14,6 @@ const rowdies = Poppins({
   weight: ["400", "500", "600", "700"],
 });
 
-export const metadata = {
-  title: "Pinpoint AI - Smart AI Workspace",
-  description:
-    "Use Pinpoint AI for instant chat, productivity, and smart learning.",
-  openGraph: {
-    title: "Pinpoint AI - Smart AI Workspace",
-    description: "Real-time AI chat, learning, and productivity.",
-    url: "https://pinpointaii.vercel.app",
-    siteName: "Pinpoint AI",
-    images: [
-      {
-        url: "ai.png",
-        width: 1200,
-        height: 630,
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Pinpoint AI - Smart AI Workspace",
-    description: "Real-time AI chat, learning, and productivity.",
-    images: ["https://pinpointaii.vercel.app/twitter-image.jpg"],
-  },
-};
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="overflow-x-hidden">
@@ -53,10 +26,6 @@ export default function RootLayout({ children }) {
           src="https://accounts.google.com/gsi/client"
           async
           defer></script>
-        <meta
-          name="description"
-          content="Pinpoint AI is a smart AI workspace for real-time chat, learning, and productivity. Experience instant inference with high accuracy."
-        />
 
         <title>Pinpoint AI - Smart AI Workspace | Chat, Infer, Learn</title>
 
