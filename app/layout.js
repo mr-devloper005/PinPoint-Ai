@@ -45,10 +45,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="overflow-x-hidden">
       <head>
-        <Script
+        <script
           src="https://accounts.google.com/gsi/client"
           async
-          defer></Script>
+          defer></script>
         <meta
           name="description"
           content="Pinpoint AI is a smart AI workspace for real-time chat, learning, and productivity. Experience instant inference with high accuracy."
