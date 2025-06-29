@@ -104,9 +104,12 @@ export const getCurrentUserThunk = createAsyncThunk(
 export const logoutThunk = createAsyncThunk(
   "auth/logout",
   async ({ toast, router }) => {
+    console.log("hello");
     try {
       const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/logout`
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/logout`,
+        {},
+        { withCredentials: true }
       );
 
       router.push("/login");
@@ -114,7 +117,7 @@ export const logoutThunk = createAsyncThunk(
         position: "top-center",
       });
 
-      console.log(res);
+      console.log(res, "this is res");
     } catch (error) {
       console.log(error);
     }

@@ -9,7 +9,7 @@ function Logout() {
     const router = useRouter()
   const handleLogout = async ()=>{
 
-
+   
     dispatch(logoutThunk({toast , router}))
   }
   return (
