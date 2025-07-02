@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PinPoint AI 🤖
 
-## Getting Started
+PinPoint AI is an AI-powered full-stack chatbot built using **Next.js**, **Node.js**, and **Gemini API**. It features user authentication, real-time AI responses, and stores conversation history with complete session management.
 
-First, run the development server:
+🔗 **Live Demo:** [pinpointai.vercel.app](https://pinpointai.vercel.app)  
+🛠️ **GitHub Repo:** [github.com/mr-devloper005/PinPoint-Ai](https://github.com/mr-devloper005/PinPoint-Ai)
+
+---
+
+## 🚀 Features
+
+- ✨ Gemini API integration for real-time smart replies  
+- 🔐 Google OAuth & JWT authentication  
+- 💬 Persistent chat history for each user  
+- 🧠 Memory support using last 5 messages in prompt  
+- 🎯 Role-based logic to isolate user sessions  
+- ⚡ Powered by Redux Toolkit (Async Thunks)  
+- 🌐 Deployed with Vercel (frontend) & Render (backend)
+
+---
+
+## 🧰 Tech Stack
+
+**Frontend:**  
+- React.js, Next.js (App Router)  
+- Tailwind CSS for modern UI  
+- Redux Toolkit for state management  
+- Axios for API communication
+
+**Backend:**  
+- Node.js, Express.js  
+- MongoDB with Mongoose  
+- JWT for session tokens  
+- Google OAuth2 integration  
+- dotenv for secure configs
+
+---
+
+## 🛠️ Installation & Setup
 
 ```bash
+# Clone the repo
+git clone https://github.com/mr-devloper005/PinPoint-Ai.git
+cd PinPoint-Ai
+
+# Backend
+cd backend
+npm install
+# Set up .env variables for MONGO_URI, JWT_SECRET, GOOGLE_CLIENT_ID etc.
+npm start
+
+# Frontend
+cd ../frontend
+npm install
+# Set up .env.local for NEXT_PUBLIC_BACKEND_URL and GEMINI_API_KEY
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
