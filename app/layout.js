@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
           async
           defer></script>
 
-        <title>Pinpoint AI - Smart AI Workspace | Chat, Infer, Learn</title>
+        <title>Pinpoint AI - Smart AI Chat App | Chat, Play With Gemini </title>
 
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
